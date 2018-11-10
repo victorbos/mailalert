@@ -1,0 +1,13 @@
+#include <Arduino.h>
+
+// builtin led
+const int BUILTIN = 2;
+
+// relay connect
+const int RELAY = 2;
+
+// pop3 mail server
+const String server = <server> ;
+const int port = <port, 110 for pop3>;
+const String user = <user>;
+const String password = <password>;
