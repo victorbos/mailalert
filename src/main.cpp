@@ -15,7 +15,7 @@ bool alert = false;
 WiFiClient client ;
 
 void tick() {
-  digitalWrite(BUILTIN, !digitalRead(BUILTIN));
+  digitalWrite(INDLED, !digitalRead(INDLED));
 }
 
 void readAnswer() {
@@ -29,7 +29,10 @@ void readAnswer() {
 void setup() {
   Serial.begin(115200);
 
+  pinMode(INDLED, OUTPUT);
   pinMode(RELAY, OUTPUT);
+
+  digitalWrite(INDLED, HIGH);
 
   WiFiManager wifiManager;
   //wifiManager.resetSettings();
@@ -37,10 +40,17 @@ void setup() {
   
   Serial.println("Wifi connected)");
 
-  digitalWrite(BUILTIN, LOW);
+  digitalWrite(INDLED, LOW);
 }
 
 void signal(bool alert) {
+  Serial.print("Relay: ") ;
+  if (alert) {
+    Serial.println("on") ;
+  } else {
+    Serial.println("off");
+  }
+
   digitalWrite(RELAY, alert) ;
 }
 

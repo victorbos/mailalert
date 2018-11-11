@@ -1,10 +1,10 @@
 #include <Arduino.h>
 
-// builtin led
-const int BUILTIN = 2;
+// led
+const int INDLED = D4;
 
 // relay connect
-const int RELAY = 2;
+const int RELAY = D1;
 
 // pop3 mail server
 const String server = <server> ;
